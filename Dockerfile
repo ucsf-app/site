@@ -8,3 +8,7 @@ RUN cd /usr/src/wordpress/wp-content/plugins && \
     wget https://downloads.wordpress.org/plugin/category-tag-pages.zip && \
     unzip \*.zip && \
     rm *.zip
+RUN cd /usr/src/wordpress/wp-content/themes && \
+    wget https://github.com/ucsf-app/site/raw/gaby/themes/twentytwenty-childT.zip && \
+	unzip \*.zip && \
+    rm *.zip
