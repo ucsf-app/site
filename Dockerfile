@@ -1,5 +1,7 @@
 FROM wordpress:latest
+
 RUN apt-get -y update && apt-get install -y wget unzip git nano
+
 RUN cd /usr/src/wordpress/wp-content/plugins && \
     wget https://downloads.wordpress.org/plugin/wp-appkit.1.5.5.zip && \
     wget https://downloads.wordpress.org/plugin/wp-rss-aggregator.4.17.4.zip && \
@@ -8,7 +10,15 @@ RUN cd /usr/src/wordpress/wp-content/plugins && \
     wget https://downloads.wordpress.org/plugin/category-tag-pages.zip && \
     unzip \*.zip && \
     rm *.zip
-RUN cd /usr/src/wordpress/wp-content/themes && \
-    wget https://github.com/ucsf-app/site/raw/gaby/themes/twentytwenty-childT.zip && \
-	unzip \*.zip && \
-    rm *.zip
+	
+COPY themes/twentytwenty-childT.zip /usr/src/wordpress/wp-content/themes/twentytwenty-childT.zip
+
+RUN unzip /usr/src/wordpress/wp-content/themes/twentytwenty-childT.zip
+
+RUN rm /usr/src/wordpress/wp-content/themes/twentytwenty-childT.zip
+
+COPY uploads/uploads.zip /usr/src/wordpress/wp-content/uploads/uploads.zip
+
+RUN unzip /usr/src/wordpress/wp-content/uploads/uploads.zip
+
+RUN rm /usr/src/wordpress/wp-content/uploads/uploads.zip
