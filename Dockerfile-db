@@ -1,11 +1,3 @@
 FROM mysql:5.7
 
-COPY db/dump-wordpress.zip /mysql/dump-wordpress.zip
-
-COPY db/setup.sql /mysql/setup.sql
-
-RUN unzip /mysql/dump-wordpress.zip
-
-RUN rm /mysql/dump-wordpress.zip
-
-RUN /mysql/setup.sh
+COPY db/dump-wordpress.sql /docker-entrypoint-initdb.d/
