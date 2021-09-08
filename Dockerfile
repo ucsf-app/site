@@ -24,3 +24,5 @@ COPY uploads/uploads.zip /usr/src/wordpress/wp-content/uploads/uploads.zip
 RUN cd /usr/src/wordpress/wp-content/uploads && \
     unzip uploads.zip && \
     rm uploads.zip
+
+COPY wp-config.php /usr/src/wordpress/wp-config.php

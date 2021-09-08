@@ -34,6 +34,10 @@ spec:
           value: wordpress
         - name: WORDPRESS_DB_USER
           value: wordpress
+        - name: WORDPRESS_HOME
+          value: https://ucsf-app.cloud.okteto.net
+        - name: WORDPRESS_SITE
+          value: https://ucsf-app.cloud.okteto.net
         image: ucsfapp/site:latest
         imagePullPolicy: ""
         name: wordpress
