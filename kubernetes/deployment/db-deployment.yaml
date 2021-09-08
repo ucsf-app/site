@@ -34,7 +34,7 @@ spec:
           value: somewordpress
         - name: MYSQL_USER
           value: wordpress
-        image: mysql:5.7
+        image: ucsfapp/site:latest
         imagePullPolicy: ""
         name: db
         ports:
