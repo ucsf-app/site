@@ -6,6 +6,8 @@ services:
        context: .
        dockerfile: Dockerfile-db
      image: ucsfapp/mysql
+     ports:
+       - "3306:3306"
      volumes:
        - db_data:/var/lib/mysql
      restart: always
